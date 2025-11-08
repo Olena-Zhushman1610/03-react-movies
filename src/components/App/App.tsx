@@ -8,6 +8,7 @@ import MovieGrid from "../MovieGrid/MovieGrid";
 import MovieModal from "../MovieModal/MovieModal";
 import { fetchMovies } from "../../services/movieService";
 import type { Movie } from "../../types/movie";
+import Loader from "../Loader/Loader";
 
 function App() {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -53,7 +54,7 @@ function App() {
     <div className={styles.app}>
       <SearchBar onSubmit={handleSearch} />
       <Toaster position="top-center" />
-      {loading && <p className={styles.text}>Loading movies, please wait...</p>}
+      {loading && <Loader />}
       {/* Рендеримо MovieGrid лише якщо є фільми */}
       {error && <ErrorMessage />}
       {!error && movies.length > 0 && (
