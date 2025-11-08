@@ -1,10 +1,5 @@
-import { ClipLoader } from "react-spinners";
 import styles from "./Loader.module.css";
 
 export default function Loader() {
-  return (
-    <div className={styles.text}>
-      <ClipLoader size={80} />
-    </div>
-  );
+  return <p className={styles.text}>Loading movies, please wait...</p>;
 }
